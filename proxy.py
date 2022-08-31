@@ -8,7 +8,7 @@ def erorr_nih(isi):
 
 ###---[ IMPORT MODULE ]---###
 try:
-	import requests, re, bs4, sys
+	import requests, re, bs4, sys, os
 except Exception as e:
 	erorr_nih(e)
 
@@ -56,4 +56,8 @@ class Proxies:
 			error_nih(e)
 
 if __name__=="__main__":
+	dev = sys.platform.lower()
+	if "linux" in dev:os.system("clear")
+	elif "win" in dev:os.system("cls")
+	else:os.system("clear")
 	Proxies()
